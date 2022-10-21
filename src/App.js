@@ -84,12 +84,12 @@ function App() {
         updateProfile(auth.currentUser, {
             displayName: name
         })
-        .then(result => {
-            console.log('updating name')
-        })
-        .catch(error => {
-            console.error(error.message)
-        })
+            .then(result => {
+                console.log('updating name')
+            })
+            .catch(error => {
+                console.error(error.message)
+            })
     }
     const verifyEmail = () => {
         sendEmailVerification(auth.currentUser)
@@ -101,7 +101,7 @@ function App() {
         <div className='w-50 mx-auto mt-2'>
             <h2 className='text-primary'>Please {registered ? 'Login!!' : 'Register!!'}</h2>
             <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
-                { !registered &&<Form.Group className="mb-3" controlId="formBasicEmail">
+                {!registered && <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Your Name</Form.Label>
                     <Form.Control onBlur={handleNameBlur} type="text" placeholder="Enter your name" required />
                     <Form.Control.Feedback type="invalid">
